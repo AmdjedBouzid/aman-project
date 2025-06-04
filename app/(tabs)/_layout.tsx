@@ -3,7 +3,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { Ionicons } from "@expo/vector-icons";
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -27,17 +27,24 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
-        name="index"
+        name="DashboardScreen"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }:any) => <Ionicons size={28} name="grid-outline" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="NotificationScreen"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'NotificationScreen',
+          tabBarIcon: ({ color }:any) => <Ionicons size={28} name="notifications-outline" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="settingScreen"
+        options={{
+          title: 'settingScreen',
+          tabBarIcon: ({ color }:any) => <Ionicons size={28} name="settings-outline" color={color} />,
         }}
       />
     </Tabs>
